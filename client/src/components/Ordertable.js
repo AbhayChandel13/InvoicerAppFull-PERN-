@@ -308,7 +308,7 @@ const Ordertable = () => {
                                     </td>
                                     <td>{ordertable.order_id}</td>
                                     <td>{ordertable.invoicenumber}</td>
-                                    <td>{ordertable.invoicedate} </td>
+                                    <td>{ordertable.invoicedate.split('T')[0]}</td>
                                     <td>{ordertable.clientname}</td>
                                     <td>{ordertable.email}</td>
                                     <td>{ordertable.address}</td>
