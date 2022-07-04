@@ -5,15 +5,14 @@ import { Row, Container, Col, Table, Form } from "react-bootstrap";
 import SearchBox from "./searchbox";
 import { useReactToPrint } from "react-to-print";
 import Header from "./../Header/Header";
-import { FaEdit, FaReacteurope } from "react-icons/fa";
+import { FaEdit,} from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../App.css";
-import { DateRangePickerComponent } from "@syncfusion/ej2-react-calendars";
 import { Link } from "react-router-dom";
 import UpdateOrder from "./updateorder";
 import { ToastContainer, toast } from "react-toastify";
-import moment from "moment";
+
 
 const Ordertable = () => {
   let [ordertable, setOrderTable] = useState([]);
