@@ -1,0 +1,151 @@
+=>1:---
+
+CREATE SEQUENCE ordertable_invoicenumber_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1000 
+  CACHE 1;
+
+TO DROP SEQUENCE:---  "DROP SEQUENCE ordertable_invoicenumber_seq CASCADE";
+
+
+CREATE TABLE IF NOT EXISTS public.ordertable
+(
+    order_id serial,
+    invoicenumber integer NOT NULL DEFAULT nextval('ordertable_invoicenumber_seq'),
+    invoicedate date,
+    duedate date,
+    name character varying(255),
+    email character varying(255) COLLATE pg_catalog."default",
+    address  character varying(255),
+    phone text COLLATE pg_catalog."default", 
+    website character varying(255),
+    clientname character varying(255) COLLATE pg_catalog."default",
+    gst text,
+    igst numeric,
+    cgst numeric,
+    tax numeric,
+    taxc numeric,
+    subtotal numeric,
+    total numeric,
+    CONSTRAINT ordertable_pkey PRIMARY KEY (order_id)
+)
+
+=>same  as 1:---COPIED FROM POSTGRESQL:---
+
+CREATE TABLE IF NOT EXISTS public.ordertable
+(
+    order_id integer NOT NULL DEFAULT nextval('ordertable_order_id_seq'::regclass),
+    invoicenumber integer NOT NULL DEFAULT nextval('ordertable_invoicenumber_seq'::regclass),
+    invoicedate date,
+    duedate date,
+    email character varying(255) COLLATE pg_catalog."default",
+    phone text COLLATE pg_catalog."default",
+    gst text COLLATE pg_catalog."default",
+    clientname character varying(255) COLLATE pg_catalog."default",
+    total numeric,
+    CONSTRAINT ordertable_pkey PRIMARY KEY (order_id)
+)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+=>CREATE TABLE IF NOT EXISTS public.orderdetails
+(
+    orderdetails_id serial PRIMARY KEY,
+    order_id integer,
+    description character varying(50) COLLATE pg_catalog."default",
+    quantity integer,
+    price numeric,
+    amount numeric,
+    CONSTRAINT fk_order_id FOREIGN KEY (order_id)
+        REFERENCES public.ordertable (order_id)
+)
+
+=>same  as 2:---COPIED FROM POSTGRESQL:---
+
+CREATE TABLE IF NOT EXISTS public.orderdetails
+(
+    orderdetails_id integer NOT NULL DEFAULT nextval('orderdetails_orderdetails_id_seq'::regclass),
+    order_id integer,
+    description character varying(50) COLLATE pg_catalog."default",
+    quantity integer,
+    price numeric,
+    amount numeric,
+    CONSTRAINT orderdetails_pkey PRIMARY KEY (orderdetails_id),
+    CONSTRAINT fk_order_id FOREIGN KEY (order_id)
+        REFERENCES public.ordertable (order_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT 
+   ordertable.order_id, ordertable.invoicenumber, ordertable.invoicedate, ordertable.clientname,ordertable.total
+   FROM ordertable
+INNER JOIN 
+    orderdetails
+ON
+    ordertable.order_id=orderdetails.order_id
+WHERE 
+     ordertable.order_id='3'
+
+
+SELECT 
+   orderdetails.order_id,ordertable.invoicenumber,ordertable.invoicedate,orderdetails.description,orderdetails.quantity,orderdetails.price,
+   orderdetails.amount   
+   FROM orderdetails,ordertable 
+WHERE ordertable.order_id=orderdetails.order_id  order by order_id desc 
+
+
+
+INSERT INTO ordertable(order_id,invoicenumber,invoicedate,duedate,email,phone,gst,clientname,total)
+VALUES ('1','21312', '05/24/2022','05/24/2022','abhi@gmail.com','175122133','68133','testclient','512.9')
+RETURNING order_id;
+
+INSERT INTO orderdetails(orderdetails_id,order_id,description,quantity,price,amount)
+VALUES ('1','1', 'testitem','2','100','200')
+RETURNING *;
+
+
+
+
+
+
+WITH CTE_Test_Sorted AS
+(
+    SELECT order_id, description,quantity,price,amount, ROW_NUMBER() OVER (PARTITION BY order_id ORDER BY order_id DESC) AS SortId 
+    FROM orderdetails
+),
+CTE_Test_Latest AS
+(
+    SELECT order_id, description,quantity,price,amount
+    FROM CTE_Test_Sorted
+    WHERE SortId = 1 
+)
+
+SELECT T.order_id, T.description, T.quantity,T.price,T.amount
+FROM orderdetails T
+INNER JOIN CTE_Test_Latest L
+    ON T.order_id = L.order_id
+
+
+SELECT * FROM orderdetails where order_id = (select max(order_id) from orderdetails)
+
+
+SELECT * FROM  ordertable,orderdetails  WHERE ordertable.order_id = orderdetails.order_id order by ordertable.order_id desc Limit 1
+  OR
+SELECT ordertable.invoicenumber,ordertable.clientname,ordertable.invoicedate,ordertable.duedate,orderdetails.order_id,orderdetails.description,orderdetails.quantity,orderdetails.price,orderdetails.amount,ordertable.total FROM orderdetails ,ordertable WHERE ordertable.order_id = orderdetails.order_id order by order_id desc Limit 1
+
+
+-------------------------------------------------------------------------------
+
+SELECT *
+FROM public.ordertable AS "dates"
+WHERE "dates"."invoicedate" BETWEEN NOW() - INTERVAL '6 hours' AND NOW()
+ORDER BY "dates"."invoicedate" DESC
+
+
+
+
