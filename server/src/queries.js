@@ -8,7 +8,11 @@ const getCompanydetails = "SELECT * FROM companydetail ";
 const getorderitems =
   "SELECT * FROM orderdetails ORDER BY orderdetails_id DESC ";
 
-// "SELECT orderdetails.orderdetails_id,orderdetails.order_id,orderdetails.description,orderdetails.quantity,orderdetails.price,orderdetails.amount FROM orderdetails INNER JOIN ordertable ON ordertable.order_id=orderdetails.order_id";
+const itemlist = "SELECT * FROM orderdetails where order_id = $1";
+const getorderbyid = "SELECT * FROM ordertable WHERE order_id = $1";
+
+const getorderbydates =
+   "SELECT * FROM ordertable  WHERE invoicedate between $1 and $2 ";
 
 const WorkOrder =
   "SELECT * FROM  ordertable,orderdetails  WHERE ordertable.order_id = orderdetails.order_id order by ordertable.order_id desc Limit 1";
@@ -18,34 +22,19 @@ const WorkOrder =
 // const itemlist =
 //   "SELECT * FROM orderdetails where order_id = (select max(order_id) from orderdetails)";
 
-  const itemlist =
-    "SELECT * FROM orderdetails where order_id = $1";
-
-
-
-  const getorderbyid = "SELECT * FROM ordertable WHERE order_id = $1";
-
-
-const getorderbydates = "SELECT * FROM ordertable  WHERE invoicedate between $1 and $2 ";
-
   const deleteordertable = "DELETE FROM  ordertable WHERE order_id = $1";
   const deleteorderdetails = "DELETE FROM  orderdetails WHERE order_id = $1";
 
-const updateOrder =
+  const updateOrder =
   "UPDATE ordertable SET name =$1,address = $2,website=$3,clientname = $4,email = $5,phone =$6,invoicenumber=$7, gst =$8 ,igst=$9,cgst=$10,tax=$11,taxc=$12,subtotal=$13,total=$14 WHERE order_id = $15";
   
-const updateOrderdetails =
+  const updateOrderdetails =
   "UPDATE orderdetails SET  description = $1,quantity =$2,price =$3,igst =$4,cgst =$5,amount =$4 WHERE order_id = $5";
 // const updateOrderdetails =
 //   "INSERT INTO orderdetails (orderdetails_id,description,quantity,price,amount) VALUES ($1,$2,$3,$4,$5) ON   DUPLICATE KEY  UPDATE description=$1,quantity=$2,price=$3,amount=$4";
 
-//"WITH inserted_id AS (INSERT INTO  ordertable(email,phone,invoicedate,duedate,clientname,invoicenumber,gst,total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING order_id) INSERT INTO orderdetails (order_id,description,quantity,price,amount) VALUES ((select order_id from inserted_id),$9,$10,$11,$12)";
-
-//orderdetails (order_id) VALUES ((select order_id from inserted_id))";
 // orderdetails (order_id,description,quantity,price,amount) VALUES ((select order_id from inserted_id),$9,$10,$11,$12)";
 //orderdata (order_id,list) VALUES ((select order_id from inserted_id),$9)";
-
-
 
 // (SELECT order_id FROM ordertable  ORDER BY order_id DESC LIMIT 1 )
 // (SELECT order_id FROM ordertable WHERE order_id IN)
