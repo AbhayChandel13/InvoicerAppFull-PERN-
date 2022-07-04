@@ -21,15 +21,6 @@ const Ordertable = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
 
-  // const startValue = new Date(
-  //   new Date().getFullYear(),
-  //   new Date().getMonth(),
-  // );
-  // const endValue = new Date(
-  //   new Date().getFullYear(),
-  //   new Date().getMonth() ,
-
-  // );
 
   console.log("startdate:", start);
   console.log("Enddate:", end);
