@@ -3,30 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 
 
-const SearchBox = ({ value, valuetext,value2,value1, onChange}) => {
-  //  function buttonclick() {
-  //    console.log("heelo");
-  //  }
- 
-  // $("#demo").daterangepicker(
-  //   {
-  //     showDropdowns: true,
-  //     startDate: "06/20/2022",
-  //     endDate: "07/30/2022",
-  //     maxDate: new Date(),
-  //   },
-  //   // function (start, end, label) {
-  //   //   console.log(
-  //   //     "New date range selected: " +
-  //   //       start.format("YYYY-MM-DD") +
-  //   //       " to " +
-  //   //       end.format("YYYY-MM-DD") +
-  //   //       " (predefined range: " +
-  //   //       label +
-  //   //       ")"
-  //   //   );
-  //   // }
-  // );
+const SearchBox = ({ value, valuetext,value2,value1, onChange}) => { 
 
   return (
     <>
