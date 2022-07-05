@@ -21,7 +21,7 @@ const SearchBox = ({ value, valuetext,value2,value1, onChange}) => {
           type="text"
           name="name"
           id="name"
-          placeholder={"Search by ClientName"}
+          placeholder={"Search  here"}
           value={valuetext}
           onChange={(e) => onChange(e.currentTarget.value)}
         />
