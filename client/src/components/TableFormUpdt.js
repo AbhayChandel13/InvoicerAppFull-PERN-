@@ -258,13 +258,7 @@ const TableFormUpdt = ({
                 type="text"
                 className="form-control"
                 defaultValue={subtotal}
-              />
-              {/* <div className="input-group-append">
-                <select className="input-group-text form-select">
-                  <option value="1">Inclusive GST</option>
-                  <option value="2">Exclusive GST</option>
-                </select>
-              </div> */}
+              />              
             </div>
           </div>
 
