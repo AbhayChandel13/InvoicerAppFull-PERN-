@@ -230,22 +230,7 @@ const TableForm = ({
               placeholder="amount"
               defaultValue={amount}
             />
-          </div>
-
-          {/* <div className="flex flex-col">
-            <div className="input-group mt-9  ">
-              <div className="input-group-prepend">
-                <span className="input-group-text">₹</span>
-              </div>
-              <input type="text" className="form-control" value={amount} />
-              <div className="input-group-append">               
-                <select className="input-group-text form-select">
-                  <option value="1">Inclusive GST</option>
-                  <option value="2">Exclusive GST</option>
-                </select>
-              </div>
-            </div>
-          </div> */}
+          </div>      
         </div>
 
         <button
@@ -267,12 +252,7 @@ const TableForm = ({
                 className="form-control"
                 defaultValue={subtotal}
               />
-              {/* <div className="input-group-append">
-                <select className="input-group-text form-select">
-                  <option value="1">Inclusive GST</option>
-                  <option value="2">Exclusive GST</option>
-                </select>
-              </div> */}
+              
             </div>
           </div>
 
@@ -328,8 +308,7 @@ const TableForm = ({
           ({ id, orderdetails_id, description, quantity, price, amount }) => (
             <React.Fragment key={id}>
               <tbody>
-                <tr>
-                  {/* <td>{orderdetails_id} </td> */}
+                <tr>                 
                   <td>{description} </td>
                   <td>{quantity} </td>
                   <td>{price} </td>
