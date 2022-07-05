@@ -38,9 +38,9 @@ const Orderitems = () => {
   if (searchQuery) {
     orderitems = orderitems.filter(
       (m) =>
-        m.orderdetails_id.toString().startsWith(searchQuery.toString()) ||
-        m.order_id.toString().startsWith(searchQuery.toString()) ||
-        m.description.toLowerCase().startsWith(searchQuery.toLowerCase())
+        //m.orderdetails_id.toString().startsWith(searchQuery.toString()) ||
+        m.order_id.toString().startsWith(searchQuery.toString())
+        //m.description.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
   }
   const handleSearch = (query) => {
@@ -75,7 +75,7 @@ const Orderitems = () => {
                         <Row>
                           <Col>
                             <Table striped bordered hover variant="light-grey">
-                              {/* <thead>
+                              <thead>
                                 <tr>
                                   <th colSpan="12" className="text-left">
                                     <SearchBox
@@ -84,7 +84,7 @@ const Orderitems = () => {
                                     />
                                   </th>
                                 </tr>
-                              </thead> */}
+                              </thead>
 
                               <thead>
                                 <tr className="text-center">
