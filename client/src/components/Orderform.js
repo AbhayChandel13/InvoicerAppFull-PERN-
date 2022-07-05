@@ -67,86 +67,12 @@ const OrderForm = () => {
   const [accnoerror, setAccnoError] = useState(null);
   const [accnomessage, setAccnoMessage] = useState("");
 
-  //  useEffect(() => {
-  //    getSingleOrder();
-  //  }, []);
-
-  //   useEffect(() => {
-  //     getItemlist();
-  //   }, []);
-
-  //  const getSingleOrder = async () => {
-  //    try {
-  //      const response = await fetch(
-  //        `http://localhost:5000/api/v1/billingdata/getoderbyid/${orderId}`
-  //      );
-  //      const jsonData = await response.json();
-  //      // setOrderTable(jsonData);
-  //      console.log(jsonData);
-
-  //      setClientname(jsonData.clientname);
-  //      setEmail(jsonData.email);
-  //      setPhone(jsonData.phone);
-  //      //setInvoicedate(jsonData.invoicedate);
-  //      setGst(jsonData.gst);
-  //    } catch (err) {
-  //      console.error(err.message);
-  //    }
-  //  };
-  //  const getItemlist = async () => {
-  //    try {
-  //      const response = await fetch(
-  //        `http://localhost:5000/api/v1/billingdata/itemlist/${orderId}`
-  //      );
-  //      const jsonData = await response.json();
-
-  //      setList(jsonData);
-  //      console.log(jsonData);
-  //    } catch (err) {
-  //      console.error(err.message);
-  //    }
-  //  };
-
-  //  const onSubmit = async (e) => {
-  //    e.preventDefault();
-  //    try {
-  //      // console.log(clientname);
-  //      let body = { clientname, email, phone, gst };
-  //      const response = await fetch(
-  //        `http://localhost:5000/api/v1/billingdata/updateorder/${orderId}`,
-  //        {
-  //          method: "PUT",
-  //          headers: { "Content-Type": "application/json" },
-  //          body: JSON.stringify(body),
-  //        }
-  //      );
-  //      toast.success("Order Updated Successfully!", {
-  //        position: "top-center",
-  //      });
-  //      setTimeout(function () {
-  //        window.location.replace("/ordertable");
-  //      }, 2000);
-  //      //window.location = "/ordertable";
-  //      // const jsonData = await response.json();
-  //      // console.log(jsonData);
-  //    } catch (err) {
-  //      console.error(err.message);
-  //    }
-  //  };
-
+ 
   const componentRef = useRef();
   const handlePrint = () => {
     window.print();
   };
 
-  //  const date = new Date();
-  //  //const futureDate = date.getDate() ;
-  //  //date.setDate(futureDate);
-  //  //const defaultValue = date.toLocaleDateString("en-CA");
-  //  console.log(date);
-  //  const defaultValue = date.toLocaleDateString("en-CA");
-  //  console.log('today :',defaultValue);
-  
  
 
   let handleSubmit = async (e) => {
@@ -549,18 +475,18 @@ const OrderForm = () => {
                       </article>
 
                       <article className="md:grid grid-cols-2 gap-10">
-                        {/* <div className="flex flex-col">
-              <label htmlFor="invoiceNumber">Invoice Number</label>
-              <input
-                type="number"
-                name="invoiceNumber"
-                id="invoiceNumber"
-                placeholder="Invoice Number"
-                autoComplete="off"
-                value={invoicenumber}
-                onChange={(e) => setinvoicenumber(e.target.value)}
-              />
-            </div> */}
+                                   {/* <div className="flex flex-col">
+                         <label htmlFor="invoiceNumber">Invoice Number</label>
+                         <input
+                           type="number"
+                           name="invoiceNumber"
+                           id="invoiceNumber"
+                           placeholder="Invoice Number"
+                           autoComplete="off"
+                           value={invoicenumber}
+                           onChange={(e) => setinvoicenumber(e.target.value)}
+                         />
+                       </div> */}
 
                         <div className="flex flex-col">
                           <label htmlFor="Invoivenumber">Invoice Number</label>
