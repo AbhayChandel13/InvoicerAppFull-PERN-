@@ -288,10 +288,10 @@ const Ordertable = () => {
                                         <Link
                                           to={`/orderUpdate/${ordertable.order_id}`}
                                           className="btn text-primary"
+                                        
                                         >
                                           <FaEdit className="text-green-500 font-bold text-4xl p-1" />
-                                        </Link>
-                                        {/* <FaEdit className="text-green-500 font-bold text-4xl p-1" /> */}
+                                        </Link>                                      
                                       </button>
                                     </td>
                                     <td>
@@ -299,8 +299,7 @@ const Ordertable = () => {
                                         className="p-2"
                                         onClick={() =>
                                           deleteRow(ordertable.order_id)
-                                        }
-                                        // deleteRow(ordertable.order_id)
+                                        }                                        
                                       >
                                         <MdDelete className="text-red-500 font-bold text-4xl" />
                                       </button>
