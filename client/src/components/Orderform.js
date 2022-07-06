@@ -474,19 +474,7 @@ const OrderForm = () => {
                         </div>
                       </article>
 
-                      <article className="md:grid grid-cols-2 gap-10">
-                        {/* <div className="flex flex-col">
-                         <label htmlFor="invoiceNumber">Invoice Number</label>
-                         <input
-                           type="number"
-                           name="invoiceNumber"
-                           id="invoiceNumber"
-                           placeholder="Invoice Number"
-                           autoComplete="off"
-                           value={invoicenumber}
-                           onChange={(e) => setinvoicenumber(e.target.value)}
-                         />
-                       </div> */}
+                      <article className="md:grid grid-cols-2 gap-10">                        
 
                         <div className="flex flex-col">
                           <label htmlFor="Invoivenumber">Invoice Number</label>
