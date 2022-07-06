@@ -475,7 +475,7 @@ const OrderForm = () => {
                       </article>
 
                       <article className="md:grid grid-cols-2 gap-10">
-                                   {/* <div className="flex flex-col">
+                        {/* <div className="flex flex-col">
                          <label htmlFor="invoiceNumber">Invoice Number</label>
                          <input
                            type="number"
@@ -508,8 +508,10 @@ const OrderForm = () => {
                             name="invoiceDate"
                             id="theDate"
                             placeholder="Invoice Date"
+                            min="2022-06-01"
+                            max="2022-07-30"
                             //defaultValue={today}
-                             value={invoicedate}
+                            value={invoicedate}
                             onChange={(e) => setinvoicedate(e.target.value)}
                           />
                         </div>

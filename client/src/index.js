@@ -62,14 +62,14 @@ ReactDOM.render(
             </ProtectedRoute>
           }
         ></Route>
-        <Route
+        {/* <Route
           path="/update/:id"
           element={
             <ProtectedRoute>
               <UpdateOrder />
             </ProtectedRoute>
           }
-        ></Route>
+        ></Route> */}
         <Route path="*" element={<Errror />} />
       </Routes>
     </Router>

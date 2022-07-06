@@ -28,7 +28,7 @@ const OrderUpdate = () => {
   const [clientname, setClientname] = useState("");
   const [clientAddress, setClientAddress] = useState("");
   const [invoicenumber, setInvoicenumber] = useState("");
-  const [invoicedate, setinvoicedate] = useState("");
+  const [invoicedate, setInvoicedate] = useState("");
   const [gst, setGst] = useState("");
 
   const [notes, setNotes] = useState("");
@@ -82,8 +82,8 @@ const OrderUpdate = () => {
       setGst(jsonData.gst);
       setIgst(jsonData.igst);
       setCgst(jsonData.cgst);
-      setinvoicedate(jsonData.setinvoicedate);
-      setInvoicenumber(jsonData.setinvoicenumber);
+      setInvoicedate(jsonData.invoicedate);
+      setInvoicenumber(jsonData.invoicenumber);
       setSubtotal(jsonData.subtotal);
     } catch (err) {
       console.error(err.message);
@@ -176,6 +176,7 @@ const OrderUpdate = () => {
         clientname,
         email,
         phone,
+        invoicedate,
         invoicenumber,
         gst,
         tax,
@@ -480,13 +481,12 @@ const OrderUpdate = () => {
                       </article>
 
                       <article className="md:grid grid-cols-2 gap-10">
-                        
                         <div className="flex flex-col">
                           <label htmlFor="invoicenumber">Invoice Number</label>
                           <input
                             type="text"
-                            name="invoiceno"
-                            id="invoiceno"
+                            name="invoicenumber"
+                            id="invoicenumber"
                             placeholder="Invoice Number"
                             autoComplete="off"
                             value={invoicenumber}
@@ -501,10 +501,10 @@ const OrderUpdate = () => {
                             id="invoiceDate"
                             placeholder="Invoice Date"
                             autoComplete="off"
-                            min="2001-01-02"
-                            max="2030-01-02"
+                            min="2022-06-01"
+                            max="2022-07-30"
                             value={invoicedate}
-                            onChange={(e) => setinvoicedate(e.target.value)}
+                            onChange={(e) =>setInvoicedate(e.target.value)}
                           />
                         </div>
                       </article>

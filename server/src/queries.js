@@ -26,7 +26,7 @@ const WorkOrder =
   const deleteorderdetails = "DELETE FROM  orderdetails WHERE order_id = $1";
 
   const updateOrder =
-  "UPDATE ordertable SET name =$1,address = $2,website=$3,clientname = $4,email = $5,phone =$6,invoicenumber=$7, gst =$8 ,igst=$9,cgst=$10,tax=$11,taxc=$12,subtotal=$13,total=$14 WHERE order_id = $15";
+    "UPDATE ordertable SET name =$1,address = $2,website=$3,clientname = $4,email = $5,phone =$6,invoicedate=$7,invoicenumber=$8, gst =$9 ,igst=$10,cgst=$11,tax=$12,taxc=$13,subtotal=$14,total=$15 WHERE order_id = $16";
   
   const updateOrderdetails =
   "UPDATE orderdetails SET  description = $1,quantity =$2,price =$3,igst =$4,cgst =$5,amount =$4 WHERE order_id = $5";
