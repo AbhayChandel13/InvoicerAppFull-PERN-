@@ -217,7 +217,14 @@ const WorkOrder = (prop,ref) => {
                             IGST({igst}%) :₹ {tax}
                           </React.Fragment>
                         ))}
-                      </div> */}                     
+                      </div> */}
+                      {/* <div className="flex flex-col">
+                        {workorder.map(({ cgst, taxc, order_id }) => (
+                          <React.Fragment key={order_id}>
+                            SGST({cgst}%) :₹ {taxc}
+                          </React.Fragment>
+                        ))}
+                      </div>*/}
                       {/* <div className="flex flex-col">
                         {workorder.map(({ total, order_id }) => (
                           <React.Fragment key={order_id}>
