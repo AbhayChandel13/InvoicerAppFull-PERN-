@@ -52,22 +52,7 @@ export default function Dates({ invoicedate, duedate }) {
         </ul>
       </article>
 
-      {/* <article className="mt-3 mb-6 flex">
-        <ul>
-          {workorder.map(({ invoicenumber, gst}) => (
-            <li className="p-1 " key={invoicenumber}>
-              <span className="font-bold">GST No:</span>
-              <React.Fragment>{gst}</React.Fragment>
-            </li>
-          ))}
-          {workorder.map(({ invoicenumber,phone  }) => (
-            <li className="p-1 " key={invoicenumber}>
-              <span className="font-bold">Phone No:</span>
-              <React.Fragment>{phone}</React.Fragment>
-            </li>
-          ))}
-        </ul>
-      </article> */}
+      
     </>
   );
 }
