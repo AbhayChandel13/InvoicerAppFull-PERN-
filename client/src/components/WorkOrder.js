@@ -148,7 +148,7 @@ const WorkOrder = (prop,ref) => {
                           </tr>
                         </thead>
                         {itemslist.map(
-                          ({
+                          ({  
                             orderdetails_id,
                             description,
                             quantity,
