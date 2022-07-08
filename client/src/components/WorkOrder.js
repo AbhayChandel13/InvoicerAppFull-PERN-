@@ -211,27 +211,7 @@ const WorkOrder = (prop,ref) => {
                         )
                       )}
                       {/* </div> */}
-                      {/* <div className="flex flex-col">
-                        {workorder.map(({ igst, tax, order_id }) => (
-                          <React.Fragment key={order_id}>
-                            IGST({igst}%) :₹ {tax}
-                          </React.Fragment>
-                        ))}
-                      </div> */}
-                      {/* <div className="flex flex-col">
-                        {workorder.map(({ cgst, taxc, order_id }) => (
-                          <React.Fragment key={order_id}>
-                            SGST({cgst}%) :₹ {taxc}
-                          </React.Fragment>
-                        ))}
-                      </div>*/}
-                      {/* <div className="flex flex-col">
-                        {workorder.map(({ total, order_id }) => (
-                          <React.Fragment key={order_id}>
-                            Total(In Words):{intToEnglish(total)}={total}
-                          </React.Fragment>
-                        ))}
-                      </div> */}
+                     
                       {/* </div> */}
                       <Footer />
                     </div>
