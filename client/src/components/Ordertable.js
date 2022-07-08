@@ -180,16 +180,14 @@ const Ordertable = () => {
                             <Table striped bordered hover variant="light-grey">
                               <thead>
                                 <tr>
-                                  <th colSpan="12">
-                                    {/* <span> </span> <br /> */}
+                                  <th colSpan="12">                                    
                                     Start Date
                                     <input
                                       type="date"
                                       name="dateStart"
                                       value={start}
                                       onChange={(e) => setStart(e.target.value)}
-                                    />
-                                    {/* <span></span> <br /> */}
+                                    />                                    
                                     End Date
                                     <input
                                       type="date"
