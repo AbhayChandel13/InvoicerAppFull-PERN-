@@ -210,9 +210,7 @@ const WorkOrder = (prop,ref) => {
                           </React.Fragment>
                         )
                       )}
-                      {/* </div> */}
-                     
-                      {/* </div> */}
+                      
                       <Footer />
                     </div>
                   </div>
