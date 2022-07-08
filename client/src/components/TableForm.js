@@ -118,7 +118,7 @@ const TableForm = ({
   // console.log(intToEnglish(total));
 
   //Edit  Function
-  const editRow = (id) => {
+  const editRow = (id) => {     
     const editingRow = list.find((row) => row.id === id);
     setList(list.filter((row) => row.id !== id));
     setIsEditing(true);
@@ -127,6 +127,11 @@ const TableForm = ({
     setQuantity(editingRow.quantity);
     setPrice(editingRow.price);
   };
+
+   //var disabled = document.getElementById("table").disabled; 
+   if (isEditing === "Edit Item") {
+     document.getElementById("table").visible = false;
+   }
 
   //Delete Function
 
@@ -239,6 +244,8 @@ const TableForm = ({
         >
           {isEditing ? "Edit Item" : "Add Item"}
         </button>
+        
+
 
         <div className="md:grid grid-cols-3 gap-10  mt-1 mb-9">
           <div className="flex flex-col">
@@ -294,7 +301,7 @@ const TableForm = ({
       </form>
 
       {/* Table Items */}
-      <table width="100%" className="mb-10">
+      <table width="100%" className="mb-10" id="table" >
         <thead>
           <tr className="bg-gray-100 py-1">
             {/* <td className="font-bold"> orderdetails_id </td> */}
