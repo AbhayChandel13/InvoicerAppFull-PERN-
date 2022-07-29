@@ -81,6 +81,26 @@ CREATE TABLE IF NOT EXISTS public.orderdetails
         DEFERRABLE INITIALLY DEFERRED
 )
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This is static data table :
+
+CREATE TABLE IF NOT EXISTS public.companydetail
+(
+    companyid serial PRIMARY KEY,
+    email  character varying(255) ,
+	phone  text,
+	gst text,
+	companyname character varying(255),
+	address_line1 character varying(255),
+    address_line2 character varying(255),
+    address_line3 character varying(255),
+	pincode numeric
+)
+
+INSERT INTO public.companydetail(
+	companyid, email, phone, gst, companyname, address_line1, address_line2, address_line3, pincode)
+	VALUES ('11101', 'WowzUnited@gmail.com','927972732','GSTIN0982', 'WOWz United','DHL Sqaure,plot no:9','Sector-22','I.T. Park Panchkula', '160101');
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SELECT 
    ordertable.order_id, ordertable.invoicenumber, ordertable.invoicedate, ordertable.clientname,ordertable.total
    FROM ordertable
