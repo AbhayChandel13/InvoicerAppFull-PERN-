@@ -5,7 +5,7 @@ import { Row, Container, Col, Table, Form } from "react-bootstrap";
 import SearchBox from "./searchbox";
 import { useReactToPrint } from "react-to-print";
 import Header from "./../Header/Header";
-import { FaEdit,} from "react-icons/fa";
+import { FaEdit, } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../App.css";
@@ -180,14 +180,14 @@ const Ordertable = () => {
                             <Table striped bordered hover variant="light-grey">
                               <thead>
                                 <tr>
-                                  <th colSpan="12">                                    
+                                  <th colSpan="12">
                                     Start Date
                                     <input
                                       type="date"
                                       name="dateStart"
                                       value={start}
                                       onChange={(e) => setStart(e.target.value)}
-                                    />                                    
+                                    />
                                     End Date
                                     <input
                                       type="date"
@@ -207,7 +207,7 @@ const Ordertable = () => {
                                   <th
                                     colSpan="12"
                                     className="text-left"
-                                    //bgcolor="grey"
+                                  //bgcolor="grey"
                                   >
                                     {/* <SearchBox
                                       value={searchQuery}
@@ -231,8 +231,8 @@ const Ordertable = () => {
                                         onChange={(e) =>
                                           setSearchQuery(e.target.value)
                                         }
-                                        // onChange={(e) =>onChange(e.currentTarget.value)}
-                                        // onChange={(e) =>(e.currentTarget.value)}
+                                      // onChange={(e) =>onChange(e.currentTarget.value)}
+                                      // onChange={(e) =>(e.currentTarget.value)}
                                       />
 
                                       <div className="input-group-append ">
@@ -286,10 +286,10 @@ const Ordertable = () => {
                                         <Link
                                           to={`/orderUpdate/${ordertable.order_id}`}
                                           className="btn text-primary"
-                                        
+
                                         >
                                           <FaEdit className="text-green-500 font-bold text-4xl p-1" />
-                                        </Link>                                      
+                                        </Link>
                                       </button>
                                     </td>
                                     <td>
@@ -297,7 +297,7 @@ const Ordertable = () => {
                                         className="p-2"
                                         onClick={() =>
                                           deleteRow(ordertable.order_id)
-                                        }                                        
+                                        }
                                       >
                                         <MdDelete className="text-red-500 font-bold text-4xl" />
                                       </button>

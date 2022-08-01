@@ -67,13 +67,13 @@ const OrderForm = () => {
   const [accnoerror, setAccnoError] = useState(null);
   const [accnomessage, setAccnoMessage] = useState("");
 
- 
+
   const componentRef = useRef();
   const handlePrint = () => {
     window.print();
   };
 
- 
+
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -474,7 +474,7 @@ const OrderForm = () => {
                         </div>
                       </article>
 
-                      <article className="md:grid grid-cols-2 gap-10">                        
+                      <article className="md:grid grid-cols-2 gap-10">
 
                         <div className="flex flex-col">
                           <label htmlFor="Invoivenumber">Invoice Number</label>
