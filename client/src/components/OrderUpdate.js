@@ -72,13 +72,13 @@ const OrderUpdate = () => {
       const jsonData = await response.json();
       // setOrderTable(jsonData);
       console.log(jsonData);
-      
+
       setName(jsonData.name);
       setWebsite(jsonData.website);
       setAddress(jsonData.address);
       setClientname(jsonData.clientname);
       setEmail(jsonData.email);
-      setPhone(jsonData.phone);      
+      setPhone(jsonData.phone);
       setGst(jsonData.gst);
       setIgst(jsonData.igst);
       setCgst(jsonData.cgst);
@@ -157,58 +157,58 @@ const OrderUpdate = () => {
       });
     }
     else {
-    toast.success("Order Updated Successfully!", {
-      position: "top-center",
-    });
-    setTimeout(function () {
-      //window.location.replace("/ordertable");
-     navigate("/ordertable", { replace: true });
-    }, 2000);
-   
-    
-    try {
-      // console.log(list);
-      // console.log(total);
-      let body = {
-        name,
-        address,
-        website,
-        clientname,
-        email,
-        phone,
-        invoicedate,
-        invoicenumber,
-        gst,
-        tax,
-        taxc,
-        subtotal,        
-        total,
-        list,
-        description,
-        quantity,
-        price,
-        igst,
-        cgst,
-        amount,
+      toast.success("Order Updated Successfully!", {
+        position: "top-center",
+      });
+      setTimeout(function () {
+        //window.location.replace("/ordertable");
+        navigate("/ordertable", { replace: true });
+      }, 2000);
 
-      };
-      const response = await fetch(
-        `http://localhost:5000/api/v1/billingdata/updateorder/${orderId}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        }
-      );
-      console.log(response);
 
-      //window.location = "/ordertable";
-      // const jsonData = await response.json();
-      // console.log(jsonData);
-    } catch (err) {
-      console.error(err.message);
+      try {
+        // console.log(list);
+        // console.log(total);
+        let body = {
+          name,
+          address,
+          website,
+          clientname,
+          email,
+          phone,
+          invoicedate,
+          invoicenumber,
+          gst,
+          tax,
+          taxc,
+          subtotal,
+          total,
+          list,
+          description,
+          quantity,
+          price,
+          igst,
+          cgst,
+          amount,
+
+        };
+        const response = await fetch(
+          `http://localhost:5000/api/v1/billingdata/updateorder/${orderId}`,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        );
+        console.log(response);
+
+        //window.location = "/ordertable";
+        // const jsonData = await response.json();
+        // console.log(jsonData);
+      } catch (err) {
+        console.error(err.message);
+      }
     }
-  }
   };
 
   const componentRef = useRef();
@@ -504,7 +504,7 @@ const OrderUpdate = () => {
                             min="2022-06-01"
                             max="2022-07-30"
                             value={invoicedate}
-                            onChange={(e) =>setInvoicedate(e.target.value)}
+                            onChange={(e) => setInvoicedate(e.target.value)}
                           />
                         </div>
                       </article>
