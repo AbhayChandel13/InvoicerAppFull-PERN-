@@ -3,7 +3,7 @@ const cors = require("cors");
 const billDataRoutes = require("./src/routes");
 const pool = require("./db");
 const app = express();
-const port = 5000;
+const port = 8000;
 
 app.use(cors());
 app.use(express.json());
