@@ -6,7 +6,7 @@ const app = express();
 const port = 8000;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json());  
 
 app.get("/", (req, res) => {
   res.send("hello from the backend");
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 
 
-app.use("/api/v1/billingdata",  billDataRoutes);
+app.use("/api/v1/billingdata",  billDataRoutes);  
 app.use("/api/v1/billingdata/items", billDataRoutes);
 app.use("/api/v1/billingdata/companydetail", billDataRoutes);
 app.use("/api/v1/billingdata/orderitems", billDataRoutes);
