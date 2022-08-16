@@ -11,8 +11,7 @@ import Home from "./components/Users/Registration";
 import Login from "./components/Users/SignIn";
 import Errror from "./components/Error";
 import ProtectedRoute from "./Header/protectedroute";
-import UpdateOrder from './components/updateorder';
-import OrderUpdate from './components/OrderUpdate';
+import OrderUpdate from "./components/OrderUpdate";
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
@@ -62,14 +61,7 @@ ReactDOM.render(
             </ProtectedRoute>
           }
         ></Route>
-        {/* <Route
-          path="/update/:id"
-          element={
-            <ProtectedRoute>
-              <UpdateOrder />
-            </ProtectedRoute>
-          }
-        ></Route> */}
+        
         <Route path="*" element={<Errror />} />
       </Routes>
     </Router>
