@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import ReactToPrint from "react-to-print";
 import WorkOrder from "./WorkOrder";
-import { Row, Container, Col, Table, Form } from "react-bootstrap";
-import SearchBox from "./searchbox";
+import { Row, Container, Col, Table } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 import Header from "./../Header/Header";
 import { FaEdit, } from "react-icons/fa";
@@ -10,7 +8,6 @@ import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../App.css";
 import { Link } from "react-router-dom";
-import UpdateOrder from "./updateorder";
 import { ToastContainer, toast } from "react-toastify";
 
 
@@ -306,41 +303,8 @@ const Ordertable = () => {
                                     <td>{ordertable.email}</td>
                                     <td>{ordertable.address}</td>
                                     <td>{ordertable.name}</td>
-                                    <td>{ordertable.phone}</td>
-                                    {/* <td>{ordertable.gst}</td>
-                                    <td>{ordertable.igst}%</td>
-                                    <td>{ordertable.cgst}%</td> */}
-                                    <td>{ordertable.total}</td>
-                                    {/* <td>
-                                      <button
-                                        className="p-1 bg-blue-500  rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
-                                        id={ordertable.order_id}
-                                        onClick={() => {handleClick();}}                                       
-                                      >
-                                        Print
-                                      </button>                                  
-                                    </td>
-                                    <td>
-                                      <button>
-                                        <Link
-                                          to={`/orderUpdate/${ordertable.order_id}`}
-                                          className="btn text-primary"
-                                        >
-                                          <FaEdit className="text-green-500 font-bold text-4xl p-1" />
-                                        </Link>                                       
-                                      </button>
-                                    </td>
-                                    <td>
-                                      <button
-                                        className="p-2"
-                                        onClick={() =>
-                                          deleteRow(ordertable.order_id)
-                                        }
-                                        // deleteRow(ordertable.order_id)
-                                      >
-                                        <MdDelete className="text-red-500 font-bold text-4xl" />
-                                      </button>
-                                    </td> */}
+                                    <td>{ordertable.phone}</td>                                  
+                                    <td>{ordertable.total}</td>                                   
                                   </tr>
                                 ))}
                               </tbody>
