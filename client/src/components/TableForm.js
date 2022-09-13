@@ -118,7 +118,7 @@ const TableForm = ({
   // console.log(intToEnglish(total));
 
   //Edit  Function
-  const editRow = (id) => {     
+  const editRow = (id) => {
     const editingRow = list.find((row) => row.id === id);
     setList(list.filter((row) => row.id !== id));
     setIsEditing(true);
@@ -128,10 +128,10 @@ const TableForm = ({
     setPrice(editingRow.price);
   };
 
-   //var disabled = document.getElementById("table").disabled; 
-   if (isEditing === "Edit Item") {
-     document.getElementById("table").visible = false;
-   }
+  //var disabled = document.getElementById("table").disabled;
+  if (isEditing === "Edit Item") {
+    document.getElementById("table").visible = false;
+  }
 
   //Delete Function
 
@@ -162,7 +162,7 @@ const TableForm = ({
     }
 
     var tax = (sum / 100) * igst;
-  //  console.log(tax);
+    //  console.log(tax);
     var taxc = (sum / 100) * cgst;
     //console.log(taxc);
     sum1 += tax + taxc;
@@ -170,7 +170,7 @@ const TableForm = ({
     //sum += taxc
     setTax(tax);
     setTaxc(taxc);
-    setSubtotal(sum.toFixed(2))
+    setSubtotal(sum.toFixed(2));
     setTotal(sum2.toFixed(2));
   });
 
@@ -235,7 +235,7 @@ const TableForm = ({
               placeholder="amount"
               defaultValue={amount}
             />
-          </div>      
+          </div>
         </div>
 
         <button
@@ -244,8 +244,6 @@ const TableForm = ({
         >
           {isEditing ? "Edit Item" : "Add Item"}
         </button>
-        
-
 
         <div className="md:grid grid-cols-3 gap-10  mt-1 mb-9">
           <div className="flex flex-col">
@@ -259,7 +257,6 @@ const TableForm = ({
                 className="form-control"
                 defaultValue={subtotal}
               />
-              
             </div>
           </div>
 
@@ -301,7 +298,7 @@ const TableForm = ({
       </form>
 
       {/* Table Items */}
-      <table width="100%" className="mb-10" id="table" >
+      <table width="100%" className="mb-10" id="table">
         <thead>
           <tr className="bg-gray-100 py-1">
             {/* <td className="font-bold"> orderdetails_id </td> */}
@@ -315,7 +312,7 @@ const TableForm = ({
           ({ id, orderdetails_id, description, quantity, price, amount }) => (
             <React.Fragment key={id}>
               <tbody>
-                <tr>                 
+                <tr>
                   <td>{description} </td>
                   <td>{quantity} </td>
                   <td>{price} </td>
