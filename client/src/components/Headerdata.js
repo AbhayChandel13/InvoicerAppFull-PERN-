@@ -11,7 +11,6 @@ export default function Headerdata({ handlePrint }) {
         </header>
 
       //commnet Added in Headerdata file 
-     //Comment Added and in the same file .  
     
     </>
   );
