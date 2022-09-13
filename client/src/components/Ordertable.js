@@ -75,10 +75,7 @@ const Ordertable = () => {
     }
   };
 
-  // const handleSearch = (query) => {
-  //   setSearchQuery(query);
-  // };
-
+  
   if (searchQuery) {
     ordertable = ordertable.filter(
       (m) =>
