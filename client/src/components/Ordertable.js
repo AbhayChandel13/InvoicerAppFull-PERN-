@@ -3,20 +3,18 @@ import WorkOrder from "./WorkOrder";
 import { Row, Container, Col, Table } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 import Header from "./../Header/Header";
-import { FaEdit, } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
-
 const Ordertable = () => {
   let [ordertable, setOrderTable] = useState([]);
   let [searchQuery, setSearchQuery] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
-
 
   console.log("startdate:", start);
   console.log("Enddate:", end);
@@ -72,7 +70,6 @@ const Ordertable = () => {
     }
   };
 
-  
   if (searchQuery) {
     ordertable = ordertable.filter(
       (m) =>
@@ -201,7 +198,7 @@ const Ordertable = () => {
                                   <th
                                     colSpan="12"
                                     className="text-left"
-                                  //bgcolor="grey"
+                                    //bgcolor="grey"
                                   >
                                     {/* <SearchBox
                                       value={searchQuery}
@@ -225,8 +222,8 @@ const Ordertable = () => {
                                         onChange={(e) =>
                                           setSearchQuery(e.target.value)
                                         }
-                                      // onChange={(e) =>onChange(e.currentTarget.value)}
-                                      // onChange={(e) =>(e.currentTarget.value)}
+                                        // onChange={(e) =>onChange(e.currentTarget.value)}
+                                        // onChange={(e) =>(e.currentTarget.value)}
                                       />
 
                                       <div className="input-group-append ">
@@ -280,7 +277,6 @@ const Ordertable = () => {
                                         <Link
                                           to={`/orderUpdate/${ordertable.order_id}`}
                                           className="btn text-primary"
-
                                         >
                                           <FaEdit className="text-green-500 font-bold text-4xl p-1" />
                                         </Link>
@@ -298,13 +294,15 @@ const Ordertable = () => {
                                     </td>
                                     <td>{ordertable.order_id}</td>
                                     <td>{ordertable.invoicenumber}</td>
-                                    <td>{ordertable.invoicedate.split('T')[0]}</td>
+                                    <td>
+                                      {ordertable.invoicedate.split("T")[0]}
+                                    </td>
                                     <td>{ordertable.clientname}</td>
                                     <td>{ordertable.email}</td>
                                     <td>{ordertable.address}</td>
                                     <td>{ordertable.name}</td>
-                                    <td>{ordertable.phone}</td>                                  
-                                    <td>{ordertable.total}</td>                                   
+                                    <td>{ordertable.phone}</td>
+                                    <td>{ordertable.total}</td>
                                   </tr>
                                 ))}
                               </tbody>
