@@ -14,7 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const OrderUpdate = () => {
   const [showInvoice, setShowInvoice] = useState(false);
   let navigate = useNavigate();
@@ -150,13 +149,11 @@ const OrderUpdate = () => {
     // console.log(errors);
 
     if (errors.length > 0) {
-
       //alert("Wrong Data!!");
       toast.error(" Wrong Data", {
         position: "top-center",
       });
-    }
-    else {
+    } else {
       toast.success("Order Updated Successfully!", {
         position: "top-center",
       });
@@ -164,7 +161,6 @@ const OrderUpdate = () => {
         //window.location.replace("/ordertable");
         navigate("/ordertable", { replace: true });
       }, 2000);
-
 
       try {
         // console.log(list);
@@ -190,7 +186,6 @@ const OrderUpdate = () => {
           igst,
           cgst,
           amount,
-
         };
         const response = await fetch(
           `http://localhost:5000/api/v1/billingdata/updateorder/${orderId}`,
@@ -215,7 +210,6 @@ const OrderUpdate = () => {
   const handlePrint = () => {
     window.print();
   };
-
 
   return (
     <>
