@@ -36,10 +36,6 @@ const WorkOrder =
 // orderdetails (order_id,description,quantity,price,amount) VALUES ((select order_id from inserted_id),$9,$10,$11,$12)";
 //orderdata (order_id,list) VALUES ((select order_id from inserted_id),$9)";
 
-// (SELECT order_id FROM ordertable  ORDER BY order_id DESC LIMIT 1 )
-// (SELECT order_id FROM ordertable WHERE order_id IN)
-//  ORDER BY order_id DESC LIMIT 1
-
 module.exports = {
   getordertable,
   getCompanydetails,
