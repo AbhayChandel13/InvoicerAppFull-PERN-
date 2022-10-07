@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function Table({list,total}) {
-
+export default function Table({ list, total }) {
   function intToEnglish(number) {
     var NS = [
       { value: 10000000, str: "Crore" },
@@ -61,7 +60,6 @@ export default function Table({list,total}) {
 
   console.log(intToEnglish(total));
 
-
   return (
     <>
       <table width="100%" className="mb-5">
@@ -69,24 +67,22 @@ export default function Table({list,total}) {
           <tr className="bg-gray-100 py-1">
             <td className="font-bold"> Description </td>
             <td className="font-bold"> Quantity </td>
-            <td className="font-bold"> Price </td>            
+            <td className="font-bold"> Price </td>
             <td className="font-bold"> Amount </td>
           </tr>
         </thead>
-        {list.map(
-          ({ id, description, quantity, price, amount }) => (
-            <React.Fragment key={id}>
-              <tbody>
-                <tr>
-                  <td>{description} </td>
-                  <td>{quantity} </td>
-                  <td>{price} </td>                  
-                  <td>{amount} </td>
-                </tr>
-              </tbody>
-            </React.Fragment>
-          )
-        )}
+        {list.map(({ id, description, quantity, price, amount }) => (
+          <React.Fragment key={id}>
+            <tbody>
+              <tr>
+                <td>{description} </td>
+                <td>{quantity} </td>
+                <td>{price} </td>
+                <td>{amount} </td>
+              </tr>
+            </tbody>
+          </React.Fragment>
+        ))}
       </table>
       {/* <div>
         <h2 className="mb-5 flex items-end justify-end mx-32 text-gray-800 text-4xl- font-bold">
