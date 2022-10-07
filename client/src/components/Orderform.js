@@ -15,7 +15,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const OrderForm = () => {
-
   var date = new Date();
 
   var day = date.getDate();
@@ -67,13 +66,10 @@ const OrderForm = () => {
   const [accnoerror, setAccnoError] = useState(null);
   const [accnomessage, setAccnoMessage] = useState("");
 
-
   const componentRef = useRef();
   const handlePrint = () => {
     window.print();
   };
-
-
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -475,7 +471,6 @@ const OrderForm = () => {
                       </article>
 
                       <article className="md:grid grid-cols-2 gap-10">
-
                         <div className="flex flex-col">
                           <label htmlFor="Invoivenumber">Invoice Number</label>
                           <input
