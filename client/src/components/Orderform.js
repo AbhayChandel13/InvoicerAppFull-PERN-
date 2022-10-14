@@ -155,7 +155,7 @@ const OrderForm = () => {
         position: "top-center",
       });
     } else {
-      toast.success("Data Sent To Database , Successfully!", {
+      toast.success("Data Added To Database , Successfully!", {
         position: "top-center",
       });
       try {
